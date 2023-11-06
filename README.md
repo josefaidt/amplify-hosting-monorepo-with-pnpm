@@ -10,7 +10,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm use 18
+        # use custom build image for later versions of Node.js 18.x
+        # - nvm use 18
         - corepack enable
         - pnpm install
     build:
