@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { sayHello } from "my-private-package"
+---
+
+<script>
+  import { sayHello } from "my-private-package"
+  const search = new URLSearchParams(window.location.search)
+  const name = search.get("name")
+  if (name) {
+    const span = document.querySelector("[data-say-hello]")
+    const input = document.querySelector('input[name="name"]')
+    const hello = sayHello(name)
+    span!.textContent = hello
+    input?.setAttribute("placeholder", name)
+  }
+</script>
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <h1>
+      <span data-say-hello class="text-gradient">{sayHello()}</span>
+    </h1>
+    <form method="GET">
+      <label>
+        Name &nbsp;
+        <input type="text" name="name" autocomplete="off" minlength="1" />
+      </label>
+    </form>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>

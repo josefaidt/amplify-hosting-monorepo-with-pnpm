@@ -1,0 +1,7 @@
+{
+  "name": "aws-exports",
+  "private": true,
+  "type": "module",
+  "exports": "./aws-exports.js",
+  "description": "package for vending aws-exports to multiple apps"
+}

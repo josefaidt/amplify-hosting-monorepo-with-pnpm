@@ -1,0 +1,16 @@
+{
+  "name": "my-private-package",
+  "type": "module",
+  "private": true,
+  "version": "0.1.0",
+  "description": "example of an unpublished monorepo package used to share code between apps",
+  "exports": "./index.ts",
+  "scripts": {
+    "test": "node --import tsx/esm --test tests/*.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "tsx": "^3.14.0",
+    "typescript": "^5.2.2"
+  }
+}

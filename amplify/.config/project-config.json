@@ -1,0 +1,17 @@
+{
+  "projectName": "amplifyhostingmonore",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "none",
+    "config": {
+      "SourceDir": "packages/aws-exports",
+      "DistributionDir": "apps/marketing-site/dist",
+      "BuildCommand": "pnpm run build",
+      "StartCommand": "pnpm run start"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}

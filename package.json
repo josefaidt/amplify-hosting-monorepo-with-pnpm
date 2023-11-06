@@ -1,0 +1,19 @@
+{
+  "name": "amplify-hosting-monorepo-with-pnpm",
+  "type": "module",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo demo for Amplify Hosting with pnpm",
+  "scripts": {
+    "build": "pnpm run -r build",
+    "test": "pnpm run -r test"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  },
+  "author": "josefaidt",
+  "packageManager": "pnpm@8.6.12",
+  "prettier": {
+    "semi": false
+  }
+}

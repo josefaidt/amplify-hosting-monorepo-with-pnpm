@@ -1,0 +1,26 @@
+version: 1
+# backend:
+#   phases:
+#     build:
+#       - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm use 18
+        - corepack enable
+        - pnpm install
+    build:
+      commands:
+        # build the entire workspace
+        - pnpm run build
+        # deploy just our marketing-site
+        - pnpm deploy --filter ./apps/marketing-site --prod --ignore-scripts ./out
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: ./out/dist
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - $(pnpm store path)
